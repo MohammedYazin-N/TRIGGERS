@@ -27,11 +27,11 @@ This project contains MySQL scripts to create a **teachers management system** w
 ### 3. **BEFORE DELETE Trigger: `before_delete_teacher`**  
 - Prevents deleting teachers with **more than 10 years of experience**.  
 - Raises an error: `"Cannot delete a teacher with more than 10 years of experience"`.
-- 
+
 ### 3. **AFTER  DELETE Trigger: `after_delete_teacher`**  
 - Logs new entries in the `teacher_log` table when  row is deleted from teacher table.
 
-- 
+  
 ## Usage  
 1. Run the provided SQL scripts in **MySQL Workbench** or any MySQL database.  
 2. Test insertions, deletions, and logging functionality.  
