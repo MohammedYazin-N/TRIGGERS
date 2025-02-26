@@ -13,25 +13,9 @@ This project contains MySQL scripts to create a **teachers management system** w
   3. **BEFORE DELETE Trigger:** Prevents deletion of teachers with more than 10 years of experience.  
   4. **AFTER DELETE Trigger:**  Logs new entries in the `teacher_log` table when  row is deleted from teacher table.
      
-## Database Schema  
-### `teachers` Table  
-| Column      | Type            | Constraints                      |  
-|------------|---------------|--------------------------------|  
-| id         | INT (Primary Key, Auto Increment) | Unique identifier |  
-| name       | VARCHAR(100)  | Not Null |  
-| subject    | VARCHAR(50)   | Not Null |  
-| experience | INT           | Not Null |  
-| salary     | DECIMAL(10,2) | Not Null (Cannot be negative) |  
-
-### `teacher_log` Table  
-| Column      | Type            | Description |  
-|------------|---------------|-------------|  
-| log_id     | INT (Primary Key, Auto Increment) | Unique log identifier |  
-| teacher_id | INT (Foreign Key) | References `teachers.id` |  
-| action     | VARCHAR(50)   | Action description |  
-| timestamp  | DATETIME      | Log timestamp |  
 
 ## Triggers  
+
 ### 1. **BEFORE INSERT Trigger: `before_insert_teacher`**  
 - Prevents inserting a teacher with a **negative salary**.  
 - Raises an error: `"Salary cannot be negative"`.  
